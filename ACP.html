@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            margin: 0 0 15px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .transactions {
+            margin-top: 20px;
+        }
+
+        .transactions table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .transactions th,
+        .transactions td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .transactions th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bank App</h1>
+    </header>
+    <div class="container">
+        <h2>Account Balance: $<span id="balance">0.00</span></h2>
+
+        <form id="income-form">
+            <h3>Add Income</h3>
+            <label for="income-desc">Description</label>
+            <input type="text" id="income-desc" placeholder="Income source" required>
+
+            <label for="income-amount">Amount</label>
+            <input type="number" id="income-amount" placeholder="Amount" required>
+
+            <button type="submit">Add Income</button>
+        </form>
+
+        <form id="expense-form">
+            <h3>Add Expense</h3>
+            <label for="expense-desc">Description</label>
+            <input type="text" id="expense-desc" placeholder="Expense type" required>
+
+            <label for="expense-amount">Amount</label>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="transactions">
+            <h3>Transaction History</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-list">
+                    <!-- Transactions will appear here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
